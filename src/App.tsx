@@ -1,4 +1,4 @@
-import { InformationCircleIcon } from "@heroicons/react/outline";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
 import { Alert } from "./components/alerts/Alert";
 import { Grid } from "./components/grid/Grid";
@@ -7,6 +7,7 @@ import { AboutModal } from "./components/modals/AboutModal";
 import { InfoModal } from "./components/modals/InfoModal";
 import { WinModal } from "./components/modals/WinModal";
 import { isWordInWordList, isWinningWord, solution } from "./lib/words";
+import SidebarMenu from "./sidebar";
 
 function App() {
   const [guesses, setGuesses] = useState<string[]>([]);
@@ -63,6 +64,7 @@ function App() {
 
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <SidebarMenu />
       <Alert message="Word not found" isOpen={isWordNotFoundAlertOpen} />
       <Alert
         message={`You lost, the word was ${solution}`}
